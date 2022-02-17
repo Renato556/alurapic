@@ -1,2 +1,5 @@
-<ap-photo url="https://www.dicaspetz.com.br/wp-content/uploads/2019/04/quantos-anos-vive-um-gato.jpg" description="Gato"></ap-photo>
-<ap-photo url="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" description="Cachorro"></ap-photo>
+<ap-photo 
+  *ngFor="let photo of photos" 
+  [url]="photo.url" 
+  [description]="photo.description">
+</ap-photo>
