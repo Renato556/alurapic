@@ -5,10 +5,10 @@
             type="search"
             placeholder="search..."
             autofocus
-            (keyup)="filter = $event.target"
+            (keyup)="debounce.next($any($event.target).value)"
             >
     </form>
 </div>
 <!-- {{ filter.value | uppercase }} -->
 
-<ap-photos [photos]="photos | filterByDescription: filter.value"></ap-photos>
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>

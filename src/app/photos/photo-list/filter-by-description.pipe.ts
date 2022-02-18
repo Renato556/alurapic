@@ -4,11 +4,12 @@ import { Photo } from '../photo/photo';
 @Pipe({ name: 'filterByDescription'})
 export class FilterByDescription implements PipeTransform{
     transform(photos: Photo[], descriptionQuery: string) {
+        console.log(descriptionQuery);
+        descriptionQuery = descriptionQuery
+        .trim()
+        .toLowerCase();
+        
         if(descriptionQuery) {
-            descriptionQuery = descriptionQuery
-            .trim()
-            .toLowerCase();
-            
             return photos.filter(photo => photo.description.toLowerCase().includes(descriptionQuery));
         } else {
             return photos;
